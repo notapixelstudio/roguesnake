@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/tiles.svg" type="Texture" id=1]
 [ext_resource path="res://Room.gd" type="Script" id=2]
+[ext_resource path="res://actors/Snake.tscn" type="PackedScene" id=3]
 
 [sub_resource type="TileSet" id=3]
 0/name = "tiles.svg 0"
@@ -132,12 +133,6 @@ script = ExtResource( 2 )
 wait_time = 0.2
 autostart = true
 
-[node name="Line2D" type="Line2D" parent="."]
-z_index = 1
-points = PoolVector2Array( 328, 184, 376, 184, 376, 168, 408, 168, 408, 104, 424, 104, 424, 152, 456, 152 )
-width = 14.0
-default_color = Color( 1, 1, 0, 1 )
-begin_cap_mode = 1
-end_cap_mode = 1
+[node name="Snake" parent="." instance=ExtResource( 3 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
