@@ -3,7 +3,7 @@ class_name Snake
 
 var head_position := Vector2(20, 10)
 var direction := 'right'
-var next_direction := direction
+var commands := []
 var alive := true
 var occupied_cells := []
 
@@ -24,12 +24,22 @@ func _on_tick():
 		update_tail()
 
 func move():
-	match next_direction:
+	while len(commands) > 0:
+		var new_direction = commands.pop_back()
+		
+		# skip commands that are useless or that would result in a trivial self-kill
+		if direction in ['left', 'right'] and new_direction in ['up', 'down']:
+			direction = new_direction
+			break
+		if direction in ['up', 'down'] and new_direction in ['left', 'right']:
+			direction = new_direction
+			break
+		
+	match direction:
 		'up': head_position += Vector2(0,-1)
 		'down': head_position += Vector2(0,1)
 		'right': head_position += Vector2(1,0)
 		'left': head_position += Vector2(-1,0)
-	direction = next_direction
 	Events.emit_signal("snake_moved", head_position)
 	
 func update_tail():
@@ -42,17 +52,19 @@ func update_tail():
 	self.add_point((head_position+Vector2(0.5,0.5))*cellsize)
 
 func _unhandled_key_input(event):
-	if direction in ['left', 'right']:
-		if event.is_action_pressed("ui_up"):
-			next_direction = 'up'
-		elif event.is_action_pressed("ui_down"):
-			next_direction = 'down'
-	
-	if direction in ['up', 'down']:
-		if event.is_action_pressed("ui_right"):
-			next_direction = 'right'
-		elif event.is_action_pressed("ui_left"):
-			next_direction = 'left'
+	if event.is_action_pressed("ui_up"):
+		_queue_command('up')
+	elif event.is_action_pressed("ui_down"):
+		_queue_command('down')
+	elif event.is_action_pressed("ui_right"):
+		_queue_command('right')
+	elif event.is_action_pressed("ui_left"):
+		_queue_command('left')
+
+func _queue_command(dir):
+	commands.push_front(dir)
+	# keep max 2 commands
+	commands.slice(0,2)
 
 func die():
 	alive = false
