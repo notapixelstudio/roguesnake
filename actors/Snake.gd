@@ -1,8 +1,9 @@
 extends Line2D
 class_name Snake
 
-var head_position = Vector2(20, 10)
-var direction = 'right'
+var head_position := Vector2(20, 10)
+var direction := 'right'
+var next_direction := direction
 var alive := true
 var occupied_cells := []
 
@@ -23,11 +24,12 @@ func _on_tick():
 		update_tail()
 
 func move():
-	match direction:
+	match next_direction:
 		'up': head_position += Vector2(0,-1)
 		'down': head_position += Vector2(0,1)
 		'right': head_position += Vector2(1,0)
 		'left': head_position += Vector2(-1,0)
+	direction = next_direction
 	Events.emit_signal("snake_moved", head_position)
 	
 func update_tail():
@@ -42,15 +44,15 @@ func update_tail():
 func _unhandled_key_input(event):
 	if direction in ['left', 'right']:
 		if event.is_action_pressed("ui_up"):
-			direction = 'up'
+			next_direction = 'up'
 		elif event.is_action_pressed("ui_down"):
-			direction = 'down'
+			next_direction = 'down'
 	
 	if direction in ['up', 'down']:
 		if event.is_action_pressed("ui_right"):
-			direction = 'right'
+			next_direction = 'right'
 		elif event.is_action_pressed("ui_left"):
-			direction = 'left'
+			next_direction = 'left'
 
 func die():
 	alive = false
