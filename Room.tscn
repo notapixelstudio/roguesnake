@@ -132,4 +132,12 @@ script = ExtResource( 2 )
 wait_time = 0.2
 autostart = true
 
+[node name="Line2D" type="Line2D" parent="."]
+z_index = 1
+points = PoolVector2Array( 328, 184, 376, 184, 376, 168, 408, 168, 408, 104, 424, 104, 424, 152, 456, 152 )
+width = 14.0
+default_color = Color( 1, 1, 0, 1 )
+begin_cap_mode = 1
+end_cap_mode = 1
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
