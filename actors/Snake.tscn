@@ -3,7 +3,6 @@
 [ext_resource path="res://actors/Snake.gd" type="Script" id=1]
 
 [node name="Snake" type="Line2D"]
-z_index = 1
 width = 14.0
 default_color = Color( 1, 1, 0, 1 )
 begin_cap_mode = 1
