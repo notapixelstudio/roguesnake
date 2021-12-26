@@ -8,7 +8,7 @@ var alive := true
 var occupied_cells := []
 
 var length := 0
-var max_length := 4
+var max_length := 3
 
 const cellsize := 16 # TBD configuration
 
@@ -43,7 +43,7 @@ func move():
 	Events.emit_signal("snake_moved", head_position)
 	
 func update_tail():
-	if length > max_length:
+	if length >= max_length:
 		occupied_cells.pop_front()
 		self.remove_point(0)
 	else:
