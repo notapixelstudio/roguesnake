@@ -10,7 +10,7 @@ var occupied_cells := []
 var length := 0
 var max_length := 3
 
-const cellsize := 16 # TBD configuration
+const cellsize := 64 # TBD configuration
 
 func _ready():
 	update_tail()
@@ -52,6 +52,7 @@ func update_tail():
 	self.add_point((head_position+Vector2(0.5,0.5))*cellsize)
 	
 	$Head.position = (head_position+Vector2(0.5,0.5))*cellsize
+	$DeadHead.position = $Head.position
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("ui_up"):
@@ -70,6 +71,8 @@ func _queue_command(dir):
 
 func die():
 	alive = false
+	$DeadHead.visible = true
+	$Head.visible = false
 
 func grow(amount):
 	max_length += amount

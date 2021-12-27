@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://actors/Snake.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Screen.gd" type="Script" id=3]
-[ext_resource path="res://assets/shaders/crt.shader" type="Shader" id=4]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -15,29 +14,12 @@ glow_levels/5 = false
 glow_blend_mode = 1
 glow_bicubic_upscale = true
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 4 )
-shader_param/boost = 1.2
-shader_param/grille_opacity = 0.85
-shader_param/scanlines_opacity = 0.95
-shader_param/vignette_opacity = 0.2
-shader_param/scanlines_speed = 0.0
-shader_param/show_grille = false
-shader_param/show_scanlines = true
-shader_param/show_vignette = true
-shader_param/show_curvature = true
-shader_param/screen_size = Vector2( 320, 180 )
-shader_param/aberration_amount = 0.0
-shader_param/move_aberration = false
-shader_param/aberration_speed = 1.0
-
 [node name="Screen" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Room" type="TileMap" parent="."]
-modulate = Color( 1.02, 1.02, 1.02, 1 )
+modulate = Color( 1.1, 1.1, 1.1, 1 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 16 )
 cell_tile_origin = 2
 cell_y_sort = true
 show_collision = true
@@ -73,15 +55,5 @@ autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource( 2 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
