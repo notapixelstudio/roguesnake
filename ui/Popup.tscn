@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/Popup.gd" type="Script" id=1]
+
+[node name="Popup" type="Polygon2D"]
+position = Vector2( -1504, -480 )
+z_index = 20
+polygon = PoolVector2Array( 1504, 480, 1472, 448, 1088, 448, 1056, 416, 1056, 64, 1088, 32, 1920, 32, 1952, 64, 1952, 416, 1920, 448, 1536, 448 )
+script = ExtResource( 1 )

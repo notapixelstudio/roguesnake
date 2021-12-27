@@ -79,3 +79,7 @@ func grow(amount):
 	
 func is_over_cell(cell : Vector2) -> bool:
 	return occupied_cells.has(cell)
+
+func get_head_position() -> Vector2:
+	return head_position
+	
