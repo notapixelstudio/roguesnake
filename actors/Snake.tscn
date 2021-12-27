@@ -21,3 +21,5 @@ texture = ExtResource( 3 )
 texture_scale = 5.0
 energy = 1.8
 shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
