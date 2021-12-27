@@ -19,11 +19,11 @@ func _on_snake_moved(cell):
 		if tile == 6:
 			# coin
 			snake.grow(1)
-			room.set_cellv(cell, 5)
+			room.set_cellv(cell, -1)
 		elif tile == 7:
 			# speed
 			$Timer.wait_time *= 0.7
-			room.set_cellv(cell, 5)
+			room.set_cellv(cell, -1)
 			
 func _unhandled_key_input(event):
 	if event.is_action_pressed("ui_cancel"):
