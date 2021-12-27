@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="10.320743"
-     inkscape:cx="91.999189"
-     inkscape:cy="42.971712"
+     inkscape:zoom="29.19147"
+     inkscape:cx="92.852467"
+     inkscape:cy="62.021543"
      inkscape:window-width="1864"
      inkscape:window-height="1016"
      inkscape:window-x="56"
@@ -72,6 +72,11 @@
      inkscape:label="Livello 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <path
+       id="path4277"
+       style="fill:#000000;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 92 54 L 92 55 L 92.5 55.5 L 92 56 L 92 57 L 93 57 L 93.5 56.5 L 94 57 L 95 57 L 95 56 L 94.5 55.5 L 95 55 L 95 54 L 94 54 L 93.5 54.5 L 93 54 L 92 54 z "
+       transform="scale(0.26458333)" />
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:square;stroke-dashoffset:1.02047"
        id="rect2277"
@@ -144,5 +149,9 @@
        y="14.2875"
        ry="0"
        width="0.79374993" />
+    <path
+       id="path4588"
+       style="fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 25.664583,14.287499 v 0.264584 l 0.132291,0.132291 -0.132291,0.132292 v 0.264583 h 0.264583 l 0.132292,-0.132291 0.132291,0.132291 h 0.264584 v -0.264583 l -0.132292,-0.132292 0.132292,-0.132291 v -0.264584 h -0.264584 l -0.132291,0.132292 -0.132292,-0.132292 z" />
   </g>
 </svg>
