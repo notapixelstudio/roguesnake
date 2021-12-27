@@ -50,6 +50,8 @@ func update_tail():
 		length += 1
 	occupied_cells.append(head_position)
 	self.add_point((head_position+Vector2(0.5,0.5))*cellsize)
+	
+	$Head.position = (head_position+Vector2(0.5,0.5))*cellsize
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("ui_up"):

@@ -7,10 +7,11 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
    sodipodi:docname="tiles.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -23,13 +24,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="2.5801858"
-     inkscape:cx="51.546675"
-     inkscape:cy="67.049435"
-     inkscape:window-width="1218"
-     inkscape:window-height="698"
+     inkscape:zoom="3.6489338"
+     inkscape:cx="250.89521"
+     inkscape:cy="144.56278"
+     inkscape:window-width="1864"
+     inkscape:window-height="1016"
      inkscape:window-x="56"
-     inkscape:window-y="-6"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:grid
@@ -38,13 +39,48 @@
        empspacing="8" />
   </sodipodi:namedview>
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2607">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop2603" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0.76923078"
+         id="stop2935" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop2605" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2607"
+       id="radialGradient2609"
+       cx="63.500004"
+       cy="42.333332"
+       fx="63.500004"
+       fy="42.333332"
+       r="27.516666"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,3.6260335e-8,1.3547427e-6,1,-6.1576749e-5,-2.0287296e-6)" />
+  </defs>
   <g
      inkscape:label="Livello 1"
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#000000;stroke:none;stroke-width:0.846665;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.63276"
+       style="opacity:1;fill:#8e8e8e;fill-opacity:1;stroke-width:2.64583;stroke-linecap:square;stroke-dashoffset:1.02047"
+       id="rect2277"
+       width="5.2916665"
+       height="5.2916665"
+       x="14.287499"
+       y="3.7041667" />
+    <rect
+       style="fill:#1a1a1a;stroke:none;stroke-width:0.846665;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.63276"
        id="rect6293"
        width="4.2333331"
        height="4.2333336"
@@ -80,22 +116,22 @@
        x="31.75"
        y="4.2333331" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:12.8;stroke-linecap:round;stroke-dashoffset:1.63276"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.8;stroke-linecap:round;stroke-dashoffset:1.63276"
        id="rect1591"
-       width="4.2333331"
-       height="4.2333336"
-       x="6.349999"
-       y="12.699998"
-       ry="0" />
+       height="0.79374963"
+       x="7.4083333"
+       y="14.2875"
+       ry="0"
+       width="0.79375005" />
     <rect
-       style="fill:#000000;stroke:none;stroke-width:0.846665;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.63276"
+       style="fill:#1a1a1a;stroke:none;stroke-width:0.846665;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.63276"
        id="rect1659"
        width="4.2333331"
        height="4.2333336"
        x="40.216667"
        y="4.2333322" />
     <rect
-       style="fill:#000000;stroke:none;stroke-width:0.846665;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.63276"
+       style="fill:#1a1a1a;stroke:none;stroke-width:0.846665;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.63276"
        id="rect4035"
        width="4.2333331"
        height="4.2333336"
@@ -113,5 +149,22 @@
        d="m 7.9375,21.695833 -1e-7,1.058333 -1.0583332,10e-7 V 23.8125 l 1.0583332,-1e-6 1e-7,1.058334 h 1.0583333 l -10e-8,-1.058334 1.0583338,1e-6 v -1.058333 l -1.0583338,-10e-7 10e-8,-1.058333 z"
        id="path6065"
        sodipodi:nodetypes="ccccccccccccc" />
+    <circle
+       style="opacity:1;fill:url(#radialGradient2609);fill-opacity:1;stroke-width:10;stroke-linecap:square;stroke-dashoffset:1.02047"
+       id="path1342"
+       cx="63.5"
+       cy="42.333332"
+       r="27.516666"
+       inkscape:export-filename="/home/nitaku/repos/roguesnake/assets/light.png"
+       inkscape:export-xdpi="74.9702"
+       inkscape:export-ydpi="74.9702" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.8;stroke-linecap:round;stroke-dashoffset:1.63276"
+       id="rect2015"
+       height="0.79374963"
+       x="8.7312498"
+       y="14.2875"
+       ry="0"
+       width="0.79374993" />
   </g>
 </svg>

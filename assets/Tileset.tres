@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=2 format=2]
+[gd_resource type="TileSet" load_steps=3 format=2]
 
 [ext_resource path="res://assets/tiles.svg" type="Texture" id=1]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 24, 24, 8, 24, 8, 8, 24, 8 )
 
 [resource]
 0/name = "tiles.svg 0"
@@ -21,16 +24,17 @@
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 0.521569, 0.65098, 0.815686, 1 )
-1/region = Rect2( 56, 8, 16, 32 )
+1/region = Rect2( 48, 8, 32, 32 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
+1/occluder = SubResource( 1 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 1/shape_one_way = false
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
-1/z_index = 0
+1/z_index = 1
 2/name = "tiles.svg 2"
 2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
@@ -72,7 +76,7 @@
 4/shape_one_way = false
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
-4/z_index = 0
+4/z_index = 1
 5/name = "tiles.svg 5"
 5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )

@@ -38,7 +38,10 @@ format = 1
 tile_data = PoolIntArray( 1900573, 2, 0, 1900574, 2, 0, 1966109, 2, 0, 1966110, 2, 0, 2031645, 2, 0, 2031646, 2, 0, 2228263, 3, 0 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.3
 autostart = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
