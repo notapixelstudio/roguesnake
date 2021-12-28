@@ -88,7 +88,7 @@ func _unhandled_key_input(event):
 func _queue_command(dir):
 	commands.push_front(dir)
 	# keep max 2 commands
-	commands.slice(0,2)
+	commands = commands.slice(0,1)
 
 func die():
 	alive = false
