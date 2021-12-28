@@ -44,9 +44,6 @@ func get_last_point_position() -> Vector2:
 func set_last_point_position(pos : Vector2) -> void:
 	self.set_point_position(self.get_point_count()-1, pos)
 	
-func cell2position(cell : Vector2) -> Vector2: # FIXME this should be global
-	return (cell+Vector2(0.5,0.5))*cellsize
-	
 func update_tail():
 	# update tail
 	if length >= max_length:
@@ -58,8 +55,8 @@ func update_tail():
 	# update continuous movement
 	previous_head_cell = occupied_cells[-1]
 	occupied_cells.append(head_cell)
-	self.set_last_point_position(cell2position(previous_head_cell))
-	self.add_point(cell2position(previous_head_cell))
+	self.set_last_point_position(Global.cell2p(previous_head_cell))
+	self.add_point(Global.cell2p(previous_head_cell))
 	
 var tick := 0.3
 var t := 0.0
@@ -68,8 +65,8 @@ func _process(delta):
 	t += delta
 	if alive and previous_head_cell:
 		var weight := t/tick - floor(t/tick)
-		var starting_position := cell2position(previous_head_cell)
-		var final_position := cell2position(head_cell)
+		var starting_position := Global.cell2p(previous_head_cell)
+		var final_position := Global.cell2p(head_cell)
 		var interpolated_position = lerp(starting_position, final_position, weight)
 		self.set_last_point_position(interpolated_position)
 		$Head.position = interpolated_position
