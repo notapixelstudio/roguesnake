@@ -31,7 +31,7 @@ func _on_snake_moved(cell):
 			room.set_cellv(cell, -1)
 			$Timer.stop()
 			var popup = popup_scene.instance()
-			popup.position = $Snake.get_head_position() - Vector2(16,0) # directly above
+			#popup.position = $Snake.get_head_position() - Vector2(16,0) # directly above
 			add_child(popup)
 			yield(popup, 'done')
 			popup.queue_free()

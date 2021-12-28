@@ -1,11 +1,11 @@
 extends Line2D
 class_name Snake
 
-var head_position := Vector2(20, 10)
+var head_cell := Vector2(20, 10)
 var direction := 'right'
 var commands := []
 var alive := true
-var occupied_cells := []
+var occupied_cells := [head_cell]
 
 var length := 0
 var max_length := 3
@@ -36,23 +36,48 @@ func move():
 			break
 		
 	match direction:
-		'up': head_position += Vector2(0,-1)
-		'down': head_position += Vector2(0,1)
-		'right': head_position += Vector2(1,0)
-		'left': head_position += Vector2(-1,0)
-	Events.emit_signal("snake_moved", head_position)
+		'up': head_cell += Vector2(0,-1)
+		'down': head_cell += Vector2(0,1)
+		'right': head_cell += Vector2(1,0)
+		'left': head_cell += Vector2(-1,0)
+	Events.emit_signal("snake_moved", head_cell)
+	
+func get_last_point_position() -> Vector2:
+	return self.get_point_position(self.get_point_count()-1)
+	
+func set_last_point_position(pos : Vector2) -> void:
+	self.set_point_position(self.get_point_count()-1, pos)
+	
+func cell2position(cell : Vector2) -> Vector2: # FIXME this should be global
+	return (cell+Vector2(0.5,0.5))*cellsize
 	
 func update_tail():
+	# update tail
 	if length >= max_length:
 		occupied_cells.pop_front()
 		self.remove_point(0)
 	else:
 		length += 1
-	occupied_cells.append(head_position)
-	self.add_point((head_position+Vector2(0.5,0.5))*cellsize)
+		
+	# update continuous movement
+	previous_head_cell = occupied_cells[-1]
+	occupied_cells.append(head_cell)
+	self.set_last_point_position(cell2position(previous_head_cell))
+	self.add_point(cell2position(previous_head_cell))
 	
-	$Head.position = (head_position+Vector2(0.5,0.5))*cellsize
-	$DeadHead.position = $Head.position
+const tick := 0.3
+var t := 0.0
+var previous_head_cell : Vector2
+func _process(delta):
+	t += delta
+	if alive and previous_head_cell:
+		var weight := t/tick - floor(t/tick)
+		var starting_position := cell2position(previous_head_cell)
+		var final_position := cell2position(head_cell)
+		var interpolated_position = lerp(starting_position, final_position, weight)
+		self.set_last_point_position(interpolated_position)
+		$Head.position = interpolated_position
+		$DeadHead.position = interpolated_position
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("ui_up"):
@@ -80,6 +105,6 @@ func grow(amount):
 func is_over_cell(cell : Vector2) -> bool:
 	return occupied_cells.has(cell)
 
-func get_head_position() -> Vector2:
-	return head_position
+func get_head_cell() -> Vector2:
+	return head_cell
 	
