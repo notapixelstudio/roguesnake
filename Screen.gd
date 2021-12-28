@@ -25,6 +25,7 @@ func _on_snake_moved(cell):
 		elif tile == 7:
 			# speed
 			$Timer.wait_time *= 0.7
+			snake.tick = $Timer.wait_time
 			room.set_cellv(cell, -1)
 		elif tile == 8:
 			# powerup

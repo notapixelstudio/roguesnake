@@ -2,7 +2,7 @@ extends Line2D
 class_name Snake
 
 var head_cell := Vector2(20, 10)
-var direction := 'right'
+var direction := Vector2.RIGHT
 var commands := []
 var alive := true
 var occupied_cells := [head_cell]
@@ -28,18 +28,14 @@ func move():
 		var new_direction = commands.pop_back()
 		
 		# skip commands that are useless or that would result in a trivial self-kill
-		if direction in ['left', 'right'] and new_direction in ['up', 'down']:
+		if direction.y == 0 and new_direction.x == 0:
 			direction = new_direction
 			break
-		if direction in ['up', 'down'] and new_direction in ['left', 'right']:
+		if direction.x == 0 and new_direction.y == 0:
 			direction = new_direction
 			break
 		
-	match direction:
-		'up': head_cell += Vector2(0,-1)
-		'down': head_cell += Vector2(0,1)
-		'right': head_cell += Vector2(1,0)
-		'left': head_cell += Vector2(-1,0)
+	head_cell += direction
 	Events.emit_signal("snake_moved", head_cell)
 	
 func get_last_point_position() -> Vector2:
@@ -65,7 +61,7 @@ func update_tail():
 	self.set_last_point_position(cell2position(previous_head_cell))
 	self.add_point(cell2position(previous_head_cell))
 	
-const tick := 0.3
+var tick := 0.3
 var t := 0.0
 var previous_head_cell : Vector2
 func _process(delta):
@@ -81,13 +77,13 @@ func _process(delta):
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("ui_up"):
-		_queue_command('up')
+		_queue_command(Vector2.UP)
 	elif event.is_action_pressed("ui_down"):
-		_queue_command('down')
+		_queue_command(Vector2.DOWN)
 	elif event.is_action_pressed("ui_right"):
-		_queue_command('right')
+		_queue_command(Vector2.RIGHT)
 	elif event.is_action_pressed("ui_left"):
-		_queue_command('left')
+		_queue_command(Vector2.LEFT)
 
 func _queue_command(dir):
 	commands.push_front(dir)
