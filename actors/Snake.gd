@@ -4,6 +4,8 @@ class_name Snake
 var head_cell := Vector2(20, 10)
 var head_position := Global.cell2p(head_cell)
 var direction := Vector2.RIGHT
+var lookahead := 0.25
+var lookahead_cell := head_cell
 var commands := []
 var has_command := false
 var alive := true
@@ -11,7 +13,7 @@ var occupied_cells := [head_cell]
 
 var length := 0
 var max_length := 3
-var speed := 0.2 # cells per second
+var speed := 3 # cells per second
 
 func _ready():
 	self._update_occupied_cells()
@@ -30,11 +32,11 @@ func _execute_command(command):
 	# skip commands that are useless or that would result in a trivial self-kill
 	if direction.y == 0 and command.x == 0:
 		direction = command
-		head_position.x = Global.cell2p(head_cell).x # snap to grid
+		head_position.x = Global.cell2p(lookahead_cell).x # snap to grid
 		return true
 	if direction.x == 0 and command.y == 0:
 		direction = command
-		head_position.y = Global.cell2p(head_cell).y # snap to grid
+		head_position.y = Global.cell2p(lookahead_cell).y # snap to grid
 		return true
 		
 	return false
@@ -45,11 +47,15 @@ func _process(delta):
 		
 	head_position += direction*speed*Global.cellsize*delta
 	
+	var new_lookahead_cell = Global.p2cell(head_position+direction*lookahead*Global.cellsize)
+	if new_lookahead_cell != lookahead_cell:
+		lookahead_cell = new_lookahead_cell
+		self._execute_queued_command()
+		Events.emit_signal("snake_moved", lookahead_cell)
+		
 	var new_head_cell = Global.p2cell(head_position)
 	if new_head_cell != head_cell:
 		head_cell = new_head_cell
-		self._execute_queued_command()
-		Events.emit_signal("snake_moved", head_cell)
 		self._update_occupied_cells()
 		
 	self._update_tail()
@@ -57,6 +63,7 @@ func _process(delta):
 	if $Debug.visible:
 		$Debug/HeadPosition.position = head_position
 		$Debug/HeadCell.position = Global.cell2p(head_cell)
+		$Debug/LookaheadCell.position = Global.cell2p(lookahead_cell)
 		
 		for point in $Debug/Points.get_children():
 			$Debug/Points.remove_child(point)
