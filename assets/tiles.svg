@@ -7,7 +7,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
    sodipodi:docname="tiles.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,20 +24,20 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="2.5801858"
-     inkscape:cx="58.910486"
-     inkscape:cy="36.431485"
-     inkscape:window-width="1218"
-     inkscape:window-height="698"
+     inkscape:zoom="5.1603716"
+     inkscape:cx="61.526577"
+     inkscape:cy="89.043975"
+     inkscape:window-width="1864"
+     inkscape:window-height="1016"
      inkscape:window-x="56"
-     inkscape:window-y="-6"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      inkscape:snap-bbox="false"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox-midpoints="false"
-     inkscape:snap-grids="false"
-     inkscape:snap-global="false">
+     inkscape:snap-grids="true"
+     inkscape:snap-global="true">
     <inkscape:grid
        type="xygrid"
        id="grid824"
@@ -77,6 +77,13 @@
      inkscape:label="Livello 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#ffffff;stroke-width:2.64583;stroke-linecap:square;stroke-dashoffset:1.02047"
+       id="rect862"
+       width="4.2333336"
+       height="4.2333336"
+       x="6.3499999"
+       y="12.7" />
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:square;stroke-dashoffset:1.02047"
        id="rect2277"
@@ -163,5 +170,20 @@
        d="m 16.143812,24.028375 1.506763,-0.205721 c 0.561561,-0.07784 0.911842,-0.32248 0.911842,-0.978561 v -0.583802 c 0,-0.667201 -0.444801,-1.034161 -1.206522,-1.034161 h -1.795884 c -0.17792,0 -0.25576,0.07784 -0.25576,0.25576 v 0.672761 c 0,0.183481 0.07784,0.255761 0.25576,0.255761 h 1.534563 c 0.06116,0 0.09452,0.03336 0.09452,0.10008 0,0.07784 -0.0278,0.10564 -0.10008,0.11676 l -1.106442,0.15568 c -0.17792,0.02224 -0.26132,0.111201 -0.23352,0.294681 l 0.11676,0.733921 c 0.0278,0.177921 0.10008,0.239081 0.278,0.216841 z m 1.134242,1.056402 v -0.728362 c 0,-0.18348 -0.07784,-0.25576 -0.25576,-0.25576 h -1.017482 c -0.18348,0 -0.25576,0.07228 -0.25576,0.25576 v 0.728362 c 0,0.17792 0.07228,0.25576 0.25576,0.25576 h 1.017482 c 0.17792,0 0.25576,-0.07784 0.25576,-0.25576 z"
        style="font-weight:bold;font-size:5.56001px;line-height:1.25;font-family:'Bungee Layers';-inkscape-font-specification:'Bungee Layers Bold';fill:#ffffff;stroke-width:0.139001"
        id="path2337" />
+    <rect
+       style="fill:none;stroke-width:1;stroke-linecap:square;stroke-dashoffset:1.02047;stroke:#ffffff;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1012"
+       width="4.2333331"
+       height="4.2333331"
+       x="6.3499999"
+       y="29.633333" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 16.933333,29.633333 v 4.233333"
+       id="path1091" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 14.816666,31.75 H 19.05"
+       id="path1093" />
   </g>
 </svg>

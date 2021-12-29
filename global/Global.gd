@@ -6,5 +6,5 @@ func cell2p(cell : Vector2) -> Vector2:
 	return (cell+Vector2(0.5,0.5))*cellsize
 	
 func p2cell(p: Vector2) -> Vector2:
-	return Vector2(round(p.x/cellsize), round(p.y/cellsize))
+	return Vector2(floor(p.x/cellsize), floor(p.y/cellsize))
 	
